@@ -15,14 +15,13 @@
  * limitations under the License.
  ******************************************************************************/
 
-
 package org.mini2dx.connect4;
 import org.mini2Dx.core.Graphics;
 import org.mini2Dx.core.game.BasicGame;
 import org.mini2Dx.core.graphics.viewport.FitViewport;
 
 
-public class Connect4Game extends BasicGame {
+public class Connect4Game extends BasicGame {   // Create Connect4Game as the sub-class or child class of BasicGame
 	public static final String GAME_IDENTIFIER = "org.mini2dx.connect4";
 	private Board board;
 	private FitViewport viewport;

@@ -20,22 +20,26 @@ import org.mini2Dx.core.Mdx;
 import org.mini2Dx.core.graphics.Sprite;
 import org.mini2Dx.core.graphics.Texture;
 
-public class TileColourSprites {
+public class TileColourSprites {        // constant field //
 
-    private static final String EMPTY_TILE = "tileGrey_27.png";
+    private static final String EMPTY_TILE = "tileGrey_27.png";  // assign the variable to get the picture of the tile
     private static final String RED_TILE = "tileRed_27.png";
     private static final String BLUE_TILE = "tileBlue_27.png";
+    private static final String BOX_TILE = "box101.png";
     private Sprite blueSprite, redSprite, emptySprite;
+    private Sprite boxSprite;
 
-     TileColourSprites() {
+     TileColourSprites()    // constructor //
+     {
         redSprite = Mdx.graphics.newSprite(Mdx.graphics.newTexture(Mdx.files.internal(RED_TILE)));
         blueSprite = Mdx.graphics.newSprite(Mdx.graphics.newTexture(Mdx.files.internal(BLUE_TILE)));
         emptySprite = Mdx.graphics.newSprite(Mdx.graphics.newTexture(Mdx.files.internal(EMPTY_TILE)));
+        boxSprite = Mdx.graphics.newSprite(Mdx.graphics.newTexture(Mdx.files.internal(BOX_TILE)));
     }
 
     Sprite getBlueSprite() {
         return blueSprite;
-    }
+    }   // method
 
     Sprite getRedSprite() {
         return redSprite;
@@ -45,5 +49,6 @@ public class TileColourSprites {
         return emptySprite;
     }
 
+    Sprite getBoxSprite() { return boxSprite; }
 
 }

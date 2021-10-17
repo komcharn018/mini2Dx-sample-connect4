@@ -18,51 +18,48 @@ package org.mini2dx.connect4;
 import org.mini2Dx.core.Graphics;
 import org.mini2Dx.core.graphics.Sprite;
 
+public class Tile  {           // class field //
 
-public class Tile  {
-
-    private int x, y; //co-oridinates of the tile.
+    private int x, y;          //co-oridinates of the tile.
     private TileColour colour;
+    // private TileColour box;
     private static TileColourSprites sprites;
-    private  Sprite tileSprite;
+    private Sprite tileSprite;
 
-    public enum TileColour
+    public enum TileColour     // enum constant //
     {
-        EMPTY,
-        BLUE,
-        RED
+        EMPTY,  // 0
+        BLUE,   // 1
+        RED,    // 2
+        BOX     // 3
     }
 
-    public Tile(TileColour colour)
+    public Tile(TileColour colour)      // constructor //
     {
        sprites = new TileColourSprites();
         this.setColour(colour);
-
     }
 
 
-    public Tile(int x, int y)
+    public Tile(int x, int y)           // constructor(overloading) //
     {
-
         sprites = new TileColourSprites();
         this.setColour(TileColour.EMPTY);
         this.x = x;
         this.y = y;
-
     }
-
 
    public Tile clone() {
         return new Tile(this.colour);
-    }
+    }   // method //
 
-    public void render(Graphics g) {
+    public void render(Graphics g)
+    {
         g.drawSprite(tileSprite);
-    }
+    }    // using mini2Dx import path //
 
     public void initialise() {
         tileSprite.setPosition(getX(),getY());
-
     }
 
     public void update(float delta) {
@@ -71,33 +68,35 @@ public class Tile  {
 
     public int getX() {
         return x;
-    }
+    }           // getter: get position x, y //
 
     public int getY() {
         return y;
     }
 
-    public TileColour getColour() {
+    public TileColour getColour()
+    {
         return colour;
     }
 
+
     public void setX(int x) {
         this.x = x;
-    }
+    }   // setter: set position x, y //
 
     public void setY(int y) {
         this.y = y;
     }
 
 
-    public void setColour(TileColour colour) {
+    public void setColour(TileColour colour)    // set the colour of the tile
+    {
         this.colour = colour;
 
-
-        switch (colour) {
+        switch (colour)
+        {
             case RED:
                 tileSprite = sprites.getRedSprite();
-
                 break;
             case BLUE:
                 tileSprite = sprites.getBlueSprite();
@@ -105,12 +104,11 @@ public class Tile  {
             case EMPTY:
                 tileSprite = sprites.getEmptySprite();
                 break;
+            case BOX:
+                tileSprite = sprites.getBoxSprite();
+                break;
         }
 
     }
-
-
-
-
 
 }

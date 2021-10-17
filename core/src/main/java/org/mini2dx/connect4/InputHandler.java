@@ -22,17 +22,17 @@ import org.mini2Dx.gdx.Input;
 
 public class InputHandler {
 
-    public boolean isEnterPressed()
+    public boolean isEnterPressed()    // check if enter button is pressed
     {
       return Mdx.input.isKeyJustPressed(Input.Keys.ENTER);
     }
 
-    public boolean isLeftPressed()
+    public boolean isLeftPressed()     // check if left button is pressed
     {
         return Mdx.input.isKeyJustPressed(Input.Keys.LEFT);
     }
 
-    public boolean isRightPressed()
+    public boolean isRightPressed()     // check if right button is pressed
     {
         return Mdx.input.isKeyJustPressed(Input.Keys.RIGHT);
     }

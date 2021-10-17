@@ -23,28 +23,28 @@ import java.io.IOException;
 
 public class TileAudio {
 
-    Sound tile_fall, game_won;
+    Sound tile_fall, game_won;      // class field //
 
-    enum SoundId {
-        TILE_FALL,
-        GAME_WON
+    enum SoundId {      // enum constant for Sound as SoundId
+        TILE_FALL,      // 0
+        GAME_WON        // 1
     }
 
     public TileAudio() {
         try {
             tile_fall = Mdx.audio.newSound(Mdx.files.internal("coin1.ogg"));
             game_won = Mdx.audio.newSound(Mdx.files.internal("jingles_SAX10.ogg"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException e) {               // note: IOE = Input Output Exceptions
+            throw new RuntimeException(e);      // catch the error occur in the program in runtime
         }
     }
 
-    public void play(SoundId sound) {
+    public void play(SoundId sound) {       // play the sound effect
         switch (sound) {
-            case TILE_FALL:
+            case TILE_FALL:                 // when tile fall
                 tile_fall.play();
                 break;
-            case GAME_WON:
+            case GAME_WON:                  // when game won
                 game_won.play();
                 break;
         }
